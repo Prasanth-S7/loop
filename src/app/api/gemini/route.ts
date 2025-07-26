@@ -1,7 +1,10 @@
 import { GoogleGenAI } from "@google/genai"
 import promptText from "./constants";
+import "dotenv/config";
 
-const ai = new GoogleGenAI({});
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY,
+});
 
 export async function POST(request: Request) {
   const { prompt } = await request.json();
