@@ -6,6 +6,10 @@ const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
 
+export async function GET(request: Request) {
+  return new Response("Server Working");
+}
+
 export async function POST(request: Request) {
   const { prompt } = await request.json();
   const response = await ai.models.generateContentStream({
