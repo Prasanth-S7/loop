@@ -12,6 +12,7 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+console.log(process.env.GEMINI_API_KEY)
   const { prompt } = await request.json();
   const response = await ai.models.generateContentStream({
     model: "gemini-2.5-flash-lite",
