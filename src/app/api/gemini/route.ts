@@ -2,6 +2,7 @@ import { GoogleGenAI } from "@google/genai"
 import promptText from "./constants";
 import "dotenv/config";
 
+console.log(process.env.GEMINI_API_KEY)
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
